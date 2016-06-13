@@ -1,0 +1,6 @@
+<%= link_to icon('edit'), edit_client_path(client) %>
+<%= link_to(icon('trash'),
+            client_path(client),
+            method: :delete,
+            data:   { confirm: 'Вы уверенны?' },
+            class: 'destroy') %>

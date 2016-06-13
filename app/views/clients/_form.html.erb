@@ -1,0 +1,16 @@
+<%= horizontal_form service.form, as: :client, url: path do |f| %>
+  <fieldset>
+    <legend>Основная информация</legend>
+    <%= f.input :company, label: 'Компания' %>
+  </fieldset>
+
+  <%= render 'contact_people', form: f %>
+
+  <hr>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit 'Сохранить', class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

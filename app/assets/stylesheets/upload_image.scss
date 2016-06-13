@@ -1,0 +1,72 @@
+.img-container {
+  .upload_form {
+    display: none;
+  }
+}
+
+.edit-image-modal-lg {
+  .modal-dialog {
+    padding: 30px;
+    min-width: 1024px;
+    max-width: 1600px;
+  }
+  .crop-container{
+    padding: 25px;
+    .crop-box{
+      float: left;
+      margin-right: 50px;
+      .jcrop-keymgr {
+        opacity: 0;
+      }
+    }
+    .crop-preview{
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+    }
+  }
+}
+
+form input.fileupload-input {
+  display: none;
+}
+
+.table .files tr {
+  td {
+    vertical-align: middle;
+  }
+}
+
+.single-uploader {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+
+  .img-box {
+    .image_thumb {
+      width: 100%;
+    }
+  }
+  .actions {
+    .action {
+      height: 34px;
+      width: 34px;
+      left: 121%;
+      visibility: visible;
+      &.edit {
+        top: 11%;
+      }
+      &.trash {
+        top: 55%;
+      }
+    }
+    i {
+      margin-top: 9px;
+    }
+    .gallery-edit {
+      background-size: cover;
+      height: 15px;
+      width: 15px;
+    }
+  }
+}

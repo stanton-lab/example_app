@@ -1,0 +1,26 @@
+<header>
+  <div class="row">
+    <div class="col-xs-6 text-left">
+      <p>Комментарии</p>
+    </div>
+  </div>
+</header>
+
+<%= horizontal_form project.comments.build, url: url, remote: true, html: { class: 'comment-form' } do |f| %>
+
+  <div class="col-xs-12">
+    <%= f.input :content, label: 'Комментарий',
+                input_html:      { class: 'submit_on_enter' },
+                wrapper:         :vertical_form %>
+  </div>
+
+  <div class="text-right">
+    <%= f.submit 'Добавить комментарий', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<ul class="comments-box media-list">
+  <% project.comments.ordered.each do |comment| %>
+    <%= render 'comment', comment: comment, project: project %>
+  <% end %>
+</ul>

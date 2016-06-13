@@ -1,0 +1,11 @@
+<div class="box-info">
+  <header>
+    <div class="row">
+      <div class="col-xs-6 text-left">
+        <p><%= service.model.name %></p>
+      </div>
+    </div>
+  </header>
+
+  <%= render 'form', service: service, path: department_path(service.model) %>
+</div>

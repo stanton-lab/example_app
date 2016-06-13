@@ -1,0 +1,13 @@
+<%= render 'menu'%>
+
+<div class="table-wrapper">
+  <div class="box-info">
+    <% currencies.each do |currency| %>
+      <div class="currency-form-<%= currency.id %> currency-form">
+        <%= render 'form',
+                   currency: currency,
+                   url: currency_path(currency)%>
+      </div>
+    <% end %>
+  </div>
+</div>

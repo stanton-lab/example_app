@@ -1,0 +1,14 @@
+<div class="flash-box">
+  <% flash.each do |type, message| %>
+    <div class="<%= bootstrap_flash_class(type) %> alert fade in">
+      <strong>
+        <%= message %>
+      </strong>
+      <button class="close" data-dismiss="alert">x</button>
+    </div>
+  <% end %>
+  <div class="alert fade in hidden">
+    <p class="message"></p>
+    <button class="close" data-dismiss="alert">x</button>
+  </div>
+</div>

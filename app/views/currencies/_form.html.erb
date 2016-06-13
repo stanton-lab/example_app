@@ -1,0 +1,13 @@
+<%= horizontal_form currency, url: url, remote: true do |f| %>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= f.input :default, label: currency.name ,
+                  class: 'string require form-control currency-default',
+                  wrapper: :horizontal_big_label %>
+    </div>
+    <div class="col-sm-6">
+      <%= submit_tag 'Сохранить', class: "btn btn-success submit-btn submit-form-#{currency.id}" %>
+    </div>
+  </div>
+
+<% end %>

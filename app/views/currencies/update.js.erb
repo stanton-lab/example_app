@@ -1,0 +1,12 @@
+var  div = $('.currency-form-<%= currency.id %>');
+var form = div.find('form');
+flash.success('Запись успешно обновлена');
+
+form.remove();
+div.append("<%= j("#{render 'currencies/form',  currency: currency, url: currency_path(currency) }").html_safe %>");
+$('.currency-form form input').keyup(function () {
+  $(this)
+      .closest('form')
+      .find('.submit-btn')
+      .addClass('visible');
+});

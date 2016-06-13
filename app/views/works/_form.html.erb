@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-8">
+    <%= horizontal_form work, url: url do |f| %>
+      <%= f.input :name,
+                  label: 'Название услуги',
+                  wrapper: :horizontal_big_label %>
+      <%= f.association :department,
+                        collection: Department.real.order(:name),
+                        prompt:     'Выберете отдел',
+                        wrapper: :horizontal_big_label %>
+      <% unless work.id.present? %>
+        <%= f.input :is_iterative,
+                    as: :radio_buttons,
+                    collection:        [['Итерационная (срок 1 месяц)', true], ['Не итерационная', false]],
+                    checked: ['Итерационная (срок 1 месяц)', true],
+                    label:             'Тип услуги',
+                    wrapper: :horizontal_big_label %>
+      <% end %>
+      <%= f.input :percent,
+                  label: 'Процентная ставка специалиста',
+                  wrapper: :horizontal_big_label %>
+        <%= f.submit 'Сохранить', class: 'btn btn-success' %>
+  <% end %>
+  </div>
+</div>
+

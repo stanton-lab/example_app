@@ -1,0 +1,20 @@
+/*
+ *= require jquery.Jcrop
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
+ *= require select2
+ *= require_self
+ *= require jquery.Jcrop
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
+ *= require bootstrap-datepicker3
+ *= require lanceng
+
+ *= require select2
+ *= require_tree .
+*/
+@import 'bootstrap-sprockets';
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "wice_grid";

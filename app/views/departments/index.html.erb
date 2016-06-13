@@ -1,0 +1,19 @@
+<div class="box-info">
+  <header>
+    <div class="row">
+      <div class="col-xs-6 text-left">
+        <p>Отделы</p>
+      </div>
+      <div class="col-xs-6 text-right">
+        <a href="<%= new_department_path %>"
+           class="btn btn-success btn-sm">
+          <%= icon 'plus' %>
+          Добавить
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="table-responsive">
+    <%= render partial: 'grid', locals: {department_grid: department_grid} %>
+  </div>
+</div>

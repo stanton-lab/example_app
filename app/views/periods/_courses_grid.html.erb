@@ -1,0 +1,22 @@
+<table data-sortable class="table table-hover">
+  <thead>
+    <tr>
+      <th>Начало периода</th>
+      <th>Конец периода</th>
+      <% Currency.active.each do |currency| %>
+       <th>
+         <%= currency.name %>
+       </th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody  class="row periods-table">
+    <% periods.each do |period| %>
+
+      <%= render partial: 'period_row', locals: { period: period }  %>
+
+    <% end %>
+  </tbody>
+
+</table>

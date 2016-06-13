@@ -1,0 +1,49 @@
+.header {
+  .navbar {
+    border-radius: 0;
+  }
+}
+
+#sidebar-menu {
+  ul {
+    li {
+      &.active {
+        a {
+          border-left-color: yellow;
+          font-weight: bold;
+          background: none;
+        }
+      }
+
+      ul.submenu {
+        li {
+          a {
+            padding-left: 45px;
+            font-weight: normal;
+          }
+          &.active {
+            a {
+              font-weight: bold;
+              background: none;
+            }
+            .fa {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.box-info {
+  header {
+    padding: 15px;
+    margin: 5px 0px 20px 0px;
+    font-weight: 400;
+    font-size: 16px;
+    display: block;
+    color: #5b5b5b;
+    border-bottom: 1px solid #ddd;
+  }
+}

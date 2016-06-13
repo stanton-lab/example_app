@@ -1,0 +1,68 @@
+.radio, .checkbox {
+  label {
+    padding-left: 0;
+    .iradio_minimal-grey {
+      margin-right: 5px;
+    }
+  }
+}
+
+.status_radios {
+  .radio {
+    &:first-child {
+      color: green;
+    }
+    &:last-child {
+      color: red;
+    }
+  }
+}
+
+.nested-fields {
+  &.notes {
+    margin-bottom: 8px;
+  }
+  .links {
+    margin-top: -20px;
+  }
+}
+
+.phones {
+  .form-control {
+    width: 95%;
+    display: inline-block;
+  }
+  .remove_fields {
+    padding-top: 3px;
+    font-size: 1.6em;
+    padding-right: 10px;
+  }
+}
+
+legend {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+fieldset {
+  font-size: small;
+  font-weight: normal;
+  border-top: 1px solid #999999;
+  padding: 4px;
+  margin: 5px;
+}
+
+legend {
+  font-size: 90%;
+  color: #888888;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+legend {
+  width: auto;
+  border-bottom: 0;
+}
+
+
+

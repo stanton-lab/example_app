@@ -1,0 +1,7 @@
+var  ul = $('.periods-table');
+var form = $('.courses-form');
+form.find('.help-block').remove();
+form.removeClass('has-error');
+ul.append("<%= j(render 'periods/period_row',  period: period) %>");
+
+form.find('.inputs-row').find('input').val('');

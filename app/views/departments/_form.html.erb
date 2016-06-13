@@ -1,0 +1,9 @@
+<%= horizontal_form service.form, as: :department, url: path do |f| %>
+  <%= f.input :name, label: 'Название' %>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit 'Сохранить', class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

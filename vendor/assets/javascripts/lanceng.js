@@ -1,0 +1,14 @@
+//= require lanceng/third/slimscroll/jquery.slimscroll.min
+//= require lanceng/raphael-min
+//= require lanceng/third/morris/morris
+//= require lanceng/third/nifty-modal/js/classie
+//= require lanceng/third/nifty-modal/js/modalEffects
+//= require lanceng/third/sortable/sortable.min
+//= require lanceng/third/select/bootstrap-select.min
+//= require lanceng/third/summernote/summernote
+//= require lanceng/third/magnific-popup/jquery.magnific-popup.min
+//= require lanceng/third/icheck/icheck.min
+//= require lanceng/third/wizard/jquery.snippet
+//= require lanceng/third/wizard/jquery.easyWizard
+//= require lanceng/third/wizard/scripts
+//= require lanceng/lanceng

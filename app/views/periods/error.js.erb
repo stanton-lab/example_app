@@ -1,0 +1,17 @@
+var form = $('.courses-form');
+form.find('.help-block').remove();
+form.addClass('has-error');
+$('.start_date').after('' +
+        '<span class="help-block">' +
+        '<%= period.errors[:starts_at].last %>' +
+        '</span>');
+$('.end_date').after('' +
+    '<span class="help-block">' +
+    '<%= period.errors[:ends_at].last %>' +
+    '</span>');
+$('.currency-value').append('' +
+    '<span class="help-block">' +
+    '<%= period.errors['currencies_periods.value'].last %>' +
+    '</span>');
+
+

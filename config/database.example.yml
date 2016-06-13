@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: example_app_development
+
+test:
+  <<: *default
+  database: example_app_test
+
+production:
+  <<: *default
+  database: example_app_production
+  password: <%= ENV['BOILERPLATE_APP_DATABASE_PASSWORD'] %>

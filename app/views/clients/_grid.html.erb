@@ -1,0 +1,30 @@
+<%= grid(clients_gird) do |g|
+
+  g.column class: 'col-sm-1 image' do |client|
+    link_to(image_tag(client.decorate.avatar_url(:small)),
+            edit_client_path(client))
+  end
+
+  g.column name: 'Company', attribute: 'company', class: 'col-sm-4' do |client|
+    link_to(client.company, edit_client_path(client))
+  end
+
+  g.column name: 'Контактное лицо', attribute: 'full_name', class: 'col-sm-3', assoc: :contact_people do |client|
+    raw(client.contact_people.map do |person|
+      render 'partials/contact_people/dropdown_info',
+             object: person,
+             edit_url: edit_client_path(client),
+             object_name: person.full_name,
+             client: client
+    end.join(' '))
+  end
+
+  g.column name: 'Создан', attribute: 'created_at', class: 'col-sm-3' do |client|
+    client.decorate.created_at
+  end
+
+  g.column class: 'actions col-sm-1' do |client|
+    render 'actions', client: client
+  end
+
+end %>

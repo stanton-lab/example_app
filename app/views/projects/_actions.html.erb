@@ -1,0 +1,6 @@
+<%= link_to icon('edit'), edit_project_path(project) %>
+<%= link_to(icon('trash'),
+            project_path(project),
+            method: :delete,
+            data:   { confirm: 'Вы уверенны?' },
+            class: 'destroy') %>

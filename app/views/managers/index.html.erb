@@ -1,0 +1,19 @@
+<div class="box-info">
+  <header>
+    <div class="row">
+      <div class="col-xs-6 text-left">
+        <p>Сотрудники</p>
+      </div>
+      <div class="col-xs-6 text-right">
+        <a href="<%= new_manager_path %>"
+           class="btn btn-success btn-sm">
+          <%= icon 'plus' %>
+          Добавить
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="table-responsive">
+    <%= render 'grid', manager_grid: manager_grid %>
+  </div>
+</div>

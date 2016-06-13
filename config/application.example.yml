@@ -1,0 +1,11 @@
+default: &default
+  app_name: Example app
+
+test:
+  <<: *default
+
+development:
+  <<: *default
+
+production:
+  <<: *default

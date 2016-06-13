@@ -1,0 +1,25 @@
+<%= grid(manager_grid) do |g|
+  g.column name: 'ФИО', attribute: 'full_name' do |manager|
+    link_to(manager.full_name, edit_manager_path(manager))
+  end
+
+  g.column name: 'Email', attribute: 'email' do |manager|
+    link_to(manager.email, edit_manager_path(manager))
+  end
+
+  g.column name: 'Role', assoc: :roles, attribute: 'name' do |manager|
+    manager.roles.map(&:name).join
+  end
+
+  g.column name:                     'Статус', attribute: 'status',
+           custom_filter:            Manager::Value::Status.list_raw,
+           allow_multiple_selection: false,
+           auto_reload:              true do |manager|
+    manager.decorate.status.label
+  end
+
+  g.column class: 'actions col-sm-1' do |manager|
+    link_to(icon('trash'), manager_path(manager), class: 'destroy',
+            method:                                      :delete, data: { confirm: 'Вы уверены?' })
+  end
+end %>

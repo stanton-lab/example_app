@@ -1,0 +1,10 @@
+<%= grid(department_grid) do |g|
+  g.column name: 'Название', attribute: 'name' do |department|
+    link_to(department.name, edit_department_path(department))
+  end
+
+  g.column class: 'actions col-sm-1' do |department|
+    link_to(icon('trash'), department_path(department), class: 'destroy',
+            method: :delete, data: {confirm: 'Вы уверены?'})
+  end
+end %>

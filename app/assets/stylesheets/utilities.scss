@@ -1,0 +1,16 @@
+.wice-grid {
+  tr.wg-filter-row {
+    input[type=text] {
+      width: 100%;
+    }
+  }
+  .actions {
+    font-size: 1.3em;
+  }
+}
+
+.jcrop-holder {
+  .right {
+    left: inherit;
+  }
+}

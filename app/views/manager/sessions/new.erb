@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="full-content-center animated fadeInDownBig">
+    <a href="#fakelink">
+     <%= image_tag('logo-color.png') %>
+    </a>
+    <div class="login-wrap">
+      <div class="box-info">
+        <h2 class="text-center">
+          <strong>
+            Вход
+          </strong>
+        </h2>
+        <%= simple_form_for(form, as: :sign_in, url: login_path) do |f| %>
+          <div class="form-group login-input">
+            <i class="fa fa-sign-in overlay"></i>
+            <%= f.input :email,
+                        label: false,
+                        error: false,
+                        autofocus: true,
+                        placeholder: 'Email',
+                        input_html: {class: 'form-control text-input' } %>
+          </div>
+          <div class="form-group login-input">
+            <i class="fa fa-key overlay"></i>
+            <%= f.input :password,
+                        label: false,
+                        error: false,
+                        placeholder: 'Password',
+                        input_html: {class: 'form-control text-input' } %>
+          </div>
+          <div class="form-group has-error">
+            <%= f.error :base %>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <button class="btn btn-success btn-block" type="submit">
+                <i class="fa fa-unlock"></i>
+                Вход
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

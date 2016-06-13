@@ -1,0 +1,9 @@
+<div class="nested-fields notes">
+  <%= form.input :full_name, label: 'ФИО' %>
+  <%= form.input :email %>
+  <%= render 'partials/phones/form', form: form %>
+
+  <div class="text-right">
+    <%= link_to_remove_association 'удалить', form, class: 'btn btn-primary btn-sm' %>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<%= render 'menu'%>
+
+<div class="table-wrapper">
+  <div class="box-info">
+
+    <header>
+      <div class="row">
+        <div class="col-xs-6 text-left">
+          <p>Проекты</p>
+        </div>
+        <div class="col-xs-6 text-right">
+          <a href="<%= new_project_path %>"
+             class="btn btn-success btn-sm">
+            <%= icon 'plus' %>
+            Добавить
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="table-responsive">
+      <%= render partial: 'grid', locals: {projects_gird: projects_gird} %>
+    </div>
+  </div>
+</div>

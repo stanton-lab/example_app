@@ -1,0 +1,19 @@
+<div class="box-info">
+  <header>
+    <div class="row">
+      <div class="col-xs-6 text-left">
+        <p><%= service.model.company %></p>
+      </div>
+    </div>
+  </header>
+
+  <%= render 'partials/uploader/single',
+             avatar:      avatar,
+             upload_url:  client_avatars_path(service.model),
+             destroy_url: client_avatars_path(service.model),
+             crop_path:   crop_client_avatars_path(service.model) %>
+
+  <hr>
+
+  <%= render 'form', path: client_path, service: service %>
+</div>

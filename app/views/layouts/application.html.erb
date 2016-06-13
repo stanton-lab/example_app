@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= ENV['app_name'] %></title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+
+  <!--[if lt IE 9]-->
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+
+  <%= favicon_link_tag '/favicon.ico' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+
+<body class="tooltips full-content">
+
+<div class="container">
+
+  <%= render 'partials/logo' %>
+
+  <%= render 'partials/left_sidebar' %>
+
+  <div class="right content-page">
+
+    <%= render 'partials/content_header' %>
+
+    <div class="body content rows scroll-y">
+
+      <ul class="breadcrumb">
+        <%= render_breadcrumbs :tag => :li, :separator => '' %>
+      </ul>
+
+      <%= render 'partials/flash_messages' %>
+
+      <%= yield %>
+
+      <%= render 'partials/content_footer' %>
+
+    </div>
+  </div>
+</div>
+<%= render 'partials/loader' %>
+
+</body>
+
+<div class="md-overlay"></div>
+
+<%= javascript_include_tag 'lanceng' %>
+</html>

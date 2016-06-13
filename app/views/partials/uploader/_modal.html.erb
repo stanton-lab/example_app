@@ -1,0 +1,31 @@
+<div class="modal edit-image-modal-lg"
+     aria-hidden="true"
+     role="dialog"
+     tabindex="-1">
+
+  <div class="modal-dialog container-fluid">
+    <div class="modal-content">
+      <div class="crop-container modal-body">
+        <div class="row">
+          <div class="crop-box">
+            <%= image_tag(avatar.crop.model.url(:main),
+                          class:  'image_main',
+                          width:  avatar.crop.model.width,
+                          height: avatar.crop.model.height) %>
+          </div>
+          <div class="crop-preview">
+            <%= image_tag(avatar.crop.model.image.url(:main), class: 'image_main') %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= form_for avatar.crop, as: :avatar, url: crop_path, method: :patch, remote: true do |f| %>
+          <% %w[x y w h].each do |attr| %>
+            <%= f.hidden_field "crop_#{attr}", class: "crop_#{attr}" %>
+          <% end %>
+          <button class="btn btn-success btn-lg"> Crop</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

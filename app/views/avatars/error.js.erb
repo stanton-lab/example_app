@@ -1,0 +1,6 @@
+loader.destroy();
+<% if service.model.errors[:image].any? %>
+flash.error('<%= service.model.errors[:image].first %>');
+<% else %>
+flash.error('Не удалось загрузить фото');
+<% end %>

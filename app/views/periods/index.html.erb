@@ -1,0 +1,13 @@
+<%= render 'menu'%>
+
+<div class="table-wrapper">
+  <div class="box-info">
+
+    <div class="table-responsive">
+      <%= render partial: 'courses_grid', locals: { periods: periods, period: period } %>
+    </div>
+
+    <%= render 'form', url: periods_path, period: period, currencies_periods: currencies_periods %>
+
+  </div>
+</div>

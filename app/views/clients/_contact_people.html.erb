@@ -1,0 +1,19 @@
+<fieldset>
+  <legend>Контактные лица</legend>
+  <div class="contact_people">
+    <%= form.simple_fields_for :contact_people do |contact_person| %>
+      <%= render 'contact_person_fields', form: contact_person %>
+    <% end %>
+    <div class="links clearfix contact_person_phone text-right">
+      <div class="form-group has-error">
+        <div class="col-sm-offset-2 col-sm-10 text-left">
+          <%= form.error :contact_people %>
+        </div>
+      </div>
+      <%= link_to_add_association '+ Добавить контактное лицо', form,
+                                  :contact_people,
+                                  form_name: :form %>
+
+    </div>
+  </div>
+</fieldset>

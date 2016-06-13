@@ -1,0 +1,75 @@
+<%= horizontal_form service.form, as: :manager, url: path do |f| %>
+
+  <fieldset>
+    <legend>Основная информация</legend>
+
+    <%= f.input :last_name, label: 'Фамилия' %>
+
+    <%= f.input :first_name, label: 'Имя' %>
+
+    <%= f.input :birthday,
+                as:         :string,
+                label:      'Дата рождения',
+                input_html: { class: 'datepicker' } %>
+
+    <%= f.input :worked_at,
+                as:         :string,
+                label:      'Дата приема на работу',
+                input_html: { class: 'datepicker' } %>
+
+    <%= f.input :department_id,
+                label:      'Отдел',
+                collection: Department.real.all,
+                prompt:     false,
+                input_html: { class: 'selectpicker' } %>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>Контактная информация</legend>
+    <%= f.input :skype,
+                label:    'Skype',
+                required: false %>
+
+    <%= render 'partials/phones/form', form: f %>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Aутентификация</legend>
+    <%= f.input :email, label: 'Email' %>
+
+    <%= f.input :password,
+                label:    'Пароль',
+                as:       :password,
+                required: f.object.required?(:password) %>
+
+    <%= f.input :password_confirmation,
+                label:    'Повторите пароль',
+                as:       :password,
+                required: f.object.required?(:password) %>
+  </fieldset>
+
+  <fieldset>
+    <legend>Авторизация</legend>
+    <%= f.input :role,
+                label:      'Роль',
+                collection: Role.list,
+                prompt:     false,
+                input_html: { class: 'selectpicker' } %>
+
+    <%= f.input :status,
+                label:        'Статус',
+                collection:   Manager::Value::Status.list,
+                as:           :radio_buttons,
+                wrapper_html: { class: 'status_radios' } %>
+  </fieldset>
+
+  <hr>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit 'Сохранить', class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

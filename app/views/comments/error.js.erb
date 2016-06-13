@@ -1,0 +1,8 @@
+var form = $('.comment-form');
+form.find('.help-block').remove();
+form.addClass('has-error');
+$('.comment_content').append('' +
+        '<span class="help-block">' +
+        '<%= comment.errors[:content].first %>' +
+        '</span>');
+

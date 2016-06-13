@@ -1,0 +1,9 @@
+/log/*
+!/log/.keep
+/tmp
+.idea
+config/database.yml
+config/application.yml
+bundle/
+*.DS_Store
+public/uploads/*

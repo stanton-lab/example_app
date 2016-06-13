@@ -1,0 +1,8 @@
+$('.comment-form')
+    .removeClass('has-error')
+    .find('.help-block')
+    .remove();
+$('.comments-box')
+    .prepend("<%= j(render 'projects/comment',  comment: comment, project: project ) %>");
+
+$('#comment_content').val('');

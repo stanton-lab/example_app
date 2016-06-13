@@ -1,0 +1,22 @@
+<li class="object-info">
+  <a href="#">
+    <%= image_tag(client.decorate.avatar_url(:small), class: 'sm-avatar ava-dropdown image-dropdown') %>
+
+    <div class="content-box">
+      <p>
+        <strong><%= object_name %></strong>
+      </p>
+
+      <p>
+        <strong>Email:</strong> <%= object.email %>
+      </p>
+
+      <% object.phones.each do |phone| %>
+        <p>
+          <strong>Телефон:</strong> <%= phone.phone %>
+        </p>
+      <% end %>
+    </div>
+
+  </a>
+</li>

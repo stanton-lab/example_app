@@ -1,0 +1,125 @@
+.preview-image-container {
+  display: inline-block;
+}
+
+.load-image-btn {
+  cursor: pointer;
+}
+
+.iradio_minimal-grey {
+  margin-right: 15px;
+}
+.radio {
+  label {
+    padding-left: 0;
+  }
+}
+
+.bold-line {
+  border-top: 1px solid #000;
+}
+
+.comments-box {
+  padding-left: 0;
+}
+
+.comment-elem {
+  list-style: none;
+  padding: 10px 10px 0;
+  border: 1px solid #ccc;
+  display: block;
+  margin-bottom: -1px;
+
+  .trash-ico {
+    font-size: 22px;
+    vertical-align: top;
+  }
+}
+
+.courses-form {
+  li {
+    list-style: none;
+    margin: 15px 0px;
+    label {
+      text-transform: uppercase;
+    }
+  }
+  padding-left: 0;
+  .currency-value {
+    .values {
+      display: table;
+      vertical-align: middle;
+      margin: 15px 0;
+      padding: 0;
+      input {
+        width: 100%;
+      }
+    }
+    .form-control {
+      display: inline-block;
+      width: inherit;
+    }
+    li {
+      display: table-cell;
+      padding-right: 10px;
+    }
+    li:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.currency-form {
+  .submit-btn {
+    display: none;
+  }
+  .visible {
+    display: block;
+  }
+}
+
+.alert {
+  .message,
+  .close {
+    display: inline-block;
+  }
+}
+
+.box-info .btn-group {
+  z-index: 10;
+}
+.image-dropdown {
+  width: 60px;
+  margin: 10px 10px 10px 0;
+}
+
+.dropdown-menu.dropdown-message.flipInX li:first-child a:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #31b0d5;
+}
+
+.dropdown-menu.dropdown-message.flipInX li a {
+  width: 100%;
+  cursor: default;
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.object-info {
+  width: 350px;
+  img {
+    float: left;
+    margin: 5px 10px 0 0;
+  }
+
+  .content-box {
+    padding-left: 70px;
+  }
+}
+
+.table-responsive {
+  overflow-x: inherit;
+}

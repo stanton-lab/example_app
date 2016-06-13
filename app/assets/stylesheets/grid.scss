@@ -1,0 +1,22 @@
+.wice-grid-container {
+  .date-filter {
+    div {
+      display: inline-block;
+      width: 50%;
+    }
+  }
+  .image {
+    img {
+      width: 100%;
+      min-width: 40px;
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        vertical-align: middle;
+      }
+    }
+  }
+}

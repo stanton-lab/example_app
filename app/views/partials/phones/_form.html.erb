@@ -1,0 +1,16 @@
+<div class="phones">
+  <%= form.simple_fields_for :phones do |phone| %>
+    <%= render 'partials/phones/phone_fields', form: phone %>
+  <% end %>
+  <div class="links clearfix new_phone text-right">
+    <div class="form-group has-error">
+      <div class="col-sm-offset-2 col-sm-10 text-left">
+        <%= form.error :phones %>
+      </div>
+    </div>
+    <%= link_to_add_association '+ Добавить телефон', form, :phones,
+                                partial:   'partials/phones/phone_fields',
+                                form_name: :form %>
+    <hr>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<%= grid(works_gird) do |g|
+  g.column name: 'Услуга', attribute: 'name', class: 'col-sm-1' do |work|
+    link_to  work.name, edit_work_path(work)
+
+  end
+
+  g.column name: 'Отдел', attribute: 'name', assoc: :department, class: 'col-sm-1' do |work|
+     work.department.name
+  end
+
+  g.column name:  'Тип услуги',
+    custom_filter: [['Итерационная', true],
+                   ['Не итерационная', false]],
+    allow_multiple_selection: false,
+    attribute: 'is_iterative', auto_reload: true do |work|
+      work.decorate.status
+  end
+
+  g.column name: 'Процентная ставка', attribute: 'percent', class: 'col-sm-1' do |work|
+     work.percent
+  end
+
+  g.column class: 'actions col-sm-1' do |work|
+    render 'actions', work: work
+  end
+
+end %>

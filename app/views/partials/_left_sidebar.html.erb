@@ -1,0 +1,39 @@
+<div class="left side-menu">
+  <div class="body rows scroll-y">
+    <div class="sidebar-inner slimscroller">
+      <div id="sidebar-menu">
+        <ul>
+          <% sidebar_items.each do |idx, item| %>
+            <% if item[:access] %>
+              <li class="<%= 'active' if item[:active].call %>">
+                <a href="<%= item[:url] %>"
+                   class="<%= 'dropdown-toggle' if item[:subitems].present? %>">
+                  <%= icon item[:icon] %>
+                  <%= item[:name] %>
+                  <% if item[:subitems].present? %>
+                    <%= icon 'angle-double-down' %>
+                  <% end %>
+                </a>
+                <% if item[:subitems].present? %>
+                  <ul class="submenu <%= 'visible' if item[:active].call %>">
+                    <% item[:subitems].each do |idx, subitem| %>
+                      <% if subitem[:access] %>
+                        <li class="<%= 'active' if subitem[:active].call %>">
+                          <a href="<%= subitem[:url] %>">
+                            <%= icon('angle-right') %>
+                            <%= subitem[:name] %>
+                          </a>
+                        </li>
+                      <% end %>
+                    <% end %>
+                  </ul>
+                <% end %>
+              </li>
+            <% end %>
+            <li class="clear"></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

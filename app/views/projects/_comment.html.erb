@@ -1,0 +1,27 @@
+<li class="media comment_<%= comment.id %>">
+  <div class="row">
+    <div class="col-sm-1">
+      <a href="<%= edit_manager_path(comment.manager) %>">
+        <img class="media-object" src="<%= comment.manager.decorate.avatar_url %>">
+      </a>
+    </div>
+
+    <div class="col-sm-9">
+      <div class="media-body ">
+        <h4 class="media-heading">
+          <%= link_to(comment.manager.full_name, edit_manager_path(comment.manager)) %>
+          <small><%= comment.decorate.created_at %></small>
+        </h4>
+        <p><%= comment.content %></p>
+      </div>
+    </div>
+
+    <div class="col-sm-2">
+      <%= link_to('удалить',
+                  project_comment_path(project, comment),
+                  method: :delete, class: 'delete',
+                  remote: true,
+                  data:   { confirm: 'Вы уверенны?' }) %>
+    </div>
+  </div>
+</li>

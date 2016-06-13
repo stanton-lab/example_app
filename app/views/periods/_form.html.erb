@@ -1,0 +1,45 @@
+<ul class="courses-form">
+  <%= horizontal_form period, url: url, remote: true, html: { class: 'courses-form' } do |f| %>
+    <div class="row">
+      <div  class="col-xs-12">
+        <div class="row inputs-row">
+          <li class="col-sm-3">
+            <%= f.input :starts_at,
+                        label: false,
+                        as: :string,
+                        placeholder: 'Начало',
+                        input_html: { class: 'datepicker tabel-cell start_date' } %>
+          </li.>
+          <li class="col-sm-3">
+            <%= f.input :ends_at,
+                        label: false,
+                        as: :string,
+                        placeholder: 'Конец',
+                        input_html: { class: 'datepicker end_date' } %>
+          </li>
+          <div class="currency-value col-sm-6">
+            <div class="values">
+              <%= f.fields_for :currencies_periods  do |form| %>
+                <li>
+                  <%= form.text_field :value, placeholder: Currency.find(form.object.currency_id).name, label: false,
+                                      class: 'string require form-control' %>
+                </li>
+              <% end %>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="col-xs-12">
+        <li>
+          <%= f.submit 'Добавить', class: 'btn btn-success' %>
+        </li>
+      </div>
+    </div>
+
+  <% end %>
+</ul>

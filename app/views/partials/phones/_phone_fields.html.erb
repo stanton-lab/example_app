@@ -1,0 +1,6 @@
+<div class="nested-fields">
+  <%= form.input :phone, label: 'Телефон', required: true do %>
+    <%= form.input_field :phone, class: 'form-control phone' %>
+    <%= link_to_remove_association icon('trash'), form, class: 'pull-right' %>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+dependencies:
+  pre:
+    - gem uninstall bundler
+    - gem install bundler --pre
+
+database:
+  override:
+    - mv config/database.example.yml config/database.yml
+    - RAILS_ENV=test bundle exec rake db:create
+    - RAILS_ENV=test bundle exec rake db:migrate
+
+test:
+  override:
+    - RAILS_ENV=test bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml

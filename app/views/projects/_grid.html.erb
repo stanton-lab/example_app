@@ -1,0 +1,43 @@
+<%= grid(projects_gird) do |g|
+
+  g.column class: 'col-sm-1 image' do |project|
+    link_to(image_tag(project.decorate.avatar_url(:small)),
+            edit_project_path(project))
+  end
+
+  g.column name: 'Проект', attribute: 'name' do |project|
+    link_to project.name, edit_project_path(project)
+  end
+
+
+  g.column name: 'Ответственный', attribute: 'full_name', assoc: :manager do |project|
+    link_to(project.manager.full_name, edit_manager_path(project.manager))
+  end
+
+  g.column name: 'Клиент', attribute: 'company', assoc: :clients do |project|
+    raw(project.clients.map do |client|
+      render 'partials/contact_people/dropdown_info',
+             object: client,
+             object_name: client.company,
+             edit_url: edit_client_path(client)
+
+    end.join(' '))
+  end
+
+  g.column name:                     'Статус',
+           custom_filter:            [['В процесе', true],
+                                      ['Завершон', false]],
+           allow_multiple_selection: false,
+           attribute:                'is_active', auto_reload: true do |project|
+    project.decorate.status_label
+  end
+
+  g.column name: 'Создан', attribute: 'created_at', class: 'col-sm-3' do |project|
+    project.decorate.created_at
+  end
+
+  g.column class: 'col-sm-1 actions' do |project|
+    render 'actions', project: project
+  end
+
+end %>

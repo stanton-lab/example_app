@@ -1,0 +1,13 @@
+$('.image_thumb').attr('src', '<%= service.model.image.url(:thumb) %>');
+$('.crop-box .image_main')
+  .attr('src', '<%= service.model.image.url(:main) %>')
+  .attr('width', '<%= service.model.width %>')
+  .attr('height', '<%= service.model.height %>');
+$('.crop-preview .image_main')
+  .attr('src', '<%= service.model.image.url(:main) %>');
+
+$('.actions').removeClass('hide');
+window.cropper.setMinSize(<%= service.model.width %>, <%= service.model.height %>);
+window.cropper.recreate();
+
+loader.destroy();

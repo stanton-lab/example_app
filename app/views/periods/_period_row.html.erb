@@ -1,0 +1,12 @@
+<tr class="course-<%= period.id %>">
+  <td class="col-sm-3"><%= period.starts_at %></td>
+  <td class="col-sm-3"><%= period.ends_at %></td>
+
+  <% period.currencies_periods.each do |currency| %>
+    <td>
+      <strong>
+        <%= currency.value %>
+      </strong>
+    </td>
+  <% end %>
+</tr>

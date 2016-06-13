@@ -1,0 +1,24 @@
+---
+
+# Init Role (required) --------------------------------------------------------
+
+hostname: "example-app.com"
+timezone: "Europe/Kiev"
+deployer_password: "somepassword"
+ssh_keys:
+  - "{{ lookup('file', 'keys/someuser.pub') }}"
+
+
+# nginx -----------------------------------------------------------------------
+
+server_name: "example-app.com"
+www_dir: "/home/deployer/{{ server_name }}"
+
+
+
+# Ruby / PostgresSQL ----------------------------------------------------------
+
+postgresql:
+  user: "deployer"
+  password: "deployerpassword" # deployer
+  dbname: "example_app_production"

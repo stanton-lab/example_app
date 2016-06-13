@@ -1,0 +1,24 @@
+<div class="gallery single-uploader">
+  <div class="img-container">
+    <div class="img-box">
+      <%= image_tag(avatar.model.image.url(:thumb), class: 'image_thumb') %>
+      <div class="actions <%= 'hide' if avatar.model.new_record? %>">
+        <span class="icon edit action">
+          <i class="gallery-edit"></i>
+        </span>
+        <%= link_to destroy_url, method: :delete, remote: true do %>
+          <span class="icon action trash" data-url="<%= destroy_url %>">
+              <i class="gallery-trash"></i>
+          </span>
+        <% end %>
+      </div>
+    </div>
+    <div class="upload_form">
+      <%= form_for avatar.model, as: :avatar, url: upload_url, method: :post,
+                   html:       { multipart: true }, remote: true do |f| %>
+        <%= f.file_field :image, class: 'image-file-field', data: { max_file_size: 5.megabytes} %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render 'partials/uploader/modal', avatar: avatar, crop_path: crop_path %>
